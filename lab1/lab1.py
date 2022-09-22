@@ -32,7 +32,7 @@ plt.show()
 # second task 
 
 #Kmeans
-data = pd.read_csv("Mall_Customers.csv")
+data = pd.read_csv("lab1\Mall_Customers.csv")
 X = data[['Spending Score (1-100)', 'Annual Income (k$)']].iloc[:, :].values
 criteries = []
 for k in range(2,10): #ищем оптимальное кол-во кластером для Kmeans методом локтя
