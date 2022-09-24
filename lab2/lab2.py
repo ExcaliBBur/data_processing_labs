@@ -21,7 +21,7 @@ while (genre1 == genre2):
 print("Your genres is", genre1, "and", genre2)
  
 nltk.download('omw-1.4', quiet=True)
-data = pd.read_csv("dataset.csv")
+data = pd.read_csv("lab2\dataset.csv")
 columns = data[['genre','lyrics']]
 columns = columns[(columns.genre == genre1) | (columns.genre == genre2)]
 
@@ -89,7 +89,7 @@ del columns
 
 # task 2 (find song myself)
 #my genres and songs
-data = pd.read_csv("mydata.csv")
+data = pd.read_csv("lab2/mydata.csv")
 columns = data[['genre','lyrics']]
 columns = columns[(columns.genre == genre1) | (columns.genre == genre2)]
 
@@ -105,13 +105,13 @@ vectorized_y_test = vectorizer.transform(y_test)
 vectorized_x_test = vectorizer.transform(x_test)
 pred = clf.predict(vectorized_x_test)
 print("Conclusion about your genres:", pred.flat[0], "and", pred.flat[1])
-print(classification_report(y_test, pred))
+print(classification_report(y_test, pred, zero_division = 0))
 print("Total accuracy is", np.mean(pred == y_test)*100,"%")
 
 input("\nEnter smth to continue\n")
 
 # task 3 (difference between david-bowie and paul-mccartney)
-data = pd.read_csv("dataset-lyrics-musics-mini.csv")
+data = pd.read_csv("lab2/dataset-lyrics-musics-mini.csv")
 columns = data[['genre','lyrics']]
 columns = columns[(columns.genre == 'david-bowie') | (columns.genre == 'paul-mccartney')]
 
